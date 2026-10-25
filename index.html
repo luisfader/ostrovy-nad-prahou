@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ostrovy nad Prahou — Robert Fader</title>
+<meta name="description" content="Ostrovy nad Prahou — román v češtině pro studenty (A2–B1). Pokračování příběhu „Do podzemí!“.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f0e6; --paper:#fbf7f0; --ink:#2a2420; --muted:#7a6d62; --line:#e2d6c5;
+  --accent:#7d2232; --accent-soft:#f1e1e0; --sky:#2c3a55;
+  --fs:1.14rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16141a; --paper:#1d1a21; --ink:#e9e2d8; --muted:#a89d92; --line:#332e37;
+    --accent:#d97a88; --accent-soft:#2c1f25; --sky:#0f1420;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16141a; --paper:#1d1a21; --ink:#e9e2d8; --muted:#a89d92; --line:#332e37;
+  --accent:#d97a88; --accent-soft:#2c1f25; --sky:#0f1420;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;line-height:1.7}
+a{color:var(--accent)}
+.bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:.5rem;padding:.6rem 16px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .home{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.25rem;color:var(--ink);text-decoration:none;margin-right:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar button{font:inherit;font-size:.9rem;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:.3rem .6rem;cursor:pointer}
+.bar button:hover{border-color:var(--accent)}
+.hero{background:linear-gradient(180deg,var(--sky) 0%,#45304a 55%,var(--bg) 100%);color:#f5ede3;padding:3.5rem 16px 4.5rem;text-align:center;position:relative;overflow:hidden}
+.hero svg{display:block;margin:0 auto 1.2rem;max-width:520px;width:100%;height:auto}
+.hero .kicker{letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;opacity:.85}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(2.4rem,8vw,4.2rem);line-height:1.05;margin:.3rem 0 .4rem}
+.hero .meta{opacity:.9;font-size:.98rem}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.4rem 1.4rem;margin:-2.5rem 0 2rem;position:relative;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem}
+.tag{font-size:.8rem;background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:.15rem .7rem}
+.desc p{margin:.4rem 0}
+h2.sec{font-family:"Cormorant Garamond",serif;font-size:1.7rem;margin:2rem 0 .6rem}
+ol.chapters{list-style:none;padding:0;margin:0 0 3rem}
+ol.chapters li a{display:flex;gap:1rem;align-items:baseline;padding:.9rem .4rem;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+ol.chapters li a:hover{background:var(--accent-soft)}
+ol.chapters .n{font-family:"Cormorant Garamond",serif;font-weight:700;color:var(--accent);font-size:1.3rem;min-width:2ch}
+.cta{display:inline-block;margin-top:1rem;background:var(--accent);color:#fff;text-decoration:none;padding:.6rem 1.1rem;border-radius:10px;font-weight:600}
+article{max-width:680px;margin:0 auto;padding:2.5rem 16px 1rem;font-size:var(--fs)}
+article .chap-n{color:var(--accent);letter-spacing:.15em;text-transform:uppercase;font-size:.8rem;text-align:center}
+article h1{font-family:"Cormorant Garamond",serif;text-align:center;font-size:clamp(2rem,6vw,2.8rem);line-height:1.1;margin:.3rem 0 2rem}
+article p{margin:0 0 1.05em;hyphens:auto}
+article p.first::first-letter{float:left;font-family:"Cormorant Garamond",serif;font-size:3.6em;line-height:.8;padding:.08em .08em 0 0;color:var(--accent)}
+.scene{text-align:center;color:var(--muted);letter-spacing:.8em;margin:1.8em 0}
+.pager{max-width:680px;margin:1rem auto 4rem;padding:0 16px;display:flex;justify-content:space-between;gap:1rem}
+.pager a{flex:1;border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:.8rem 1rem;text-decoration:none;color:var(--ink);font-size:.95rem}
+.pager a small{display:block;color:var(--muted)}
+.pager a.next{text-align:right}
+.pager a:hover{border-color:var(--accent)}
+.end{text-align:center;color:var(--muted);font-style:italic;margin:2rem 0}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:2rem 16px 3rem;border-top:1px solid var(--line)}
+.err{padding:3rem 16px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="home" href="#/">Ostrovy nad Prahou</a>
+  <button id="smaller" aria-label="Menší písmo">A−</button>
+  <button id="bigger" aria-label="Větší písmo">A+</button>
+  <button id="theme" aria-label="Přepnout motiv">◐</button>
+</div>
+<main id="app"></main>
+<footer>© Robert Fader · Román v češtině pro studenty, úroveň A2–B1</footer>
+
+<script>
+const app = document.getElementById('app');
+const store = {
+  get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+  set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+};
+let novel = null;
+
+const skyline = `<svg viewBox="0 0 520 200" aria-hidden="true">
+  <g fill="#1b1622" opacity=".9">
+    <path d="M60 40 l70 0 l-8 22 l-20 10 l-14 -4 l-18 6 z"/><rect x="78" y="14" width="8" height="26"/><rect x="96" y="6" width="10" height="34"/><rect x="114" y="18" width="7" height="22"/>
+    <path d="M220 20 l90 0 l-10 26 l-28 12 l-22 -6 l-22 8 z"/><rect x="240" y="-6" width="10" height="28"/><rect x="262" y="-16" width="12" height="38"/><rect x="286" y="0" width="9" height="22"/>
+    <path d="M390 46 l66 0 l-8 20 l-22 8 l-16 -5 l-14 4 z"/><rect x="406" y="22" width="8" height="24"/><rect x="424" y="14" width="10" height="32"/>
+  </g>
+  <g stroke="#c9a46a" stroke-width="2" stroke-dasharray="5 4" opacity=".8">
+    <line x1="96" y1="72" x2="120" y2="168"/><line x1="268" y1="58" x2="262" y2="160"/><line x1="428" y1="74" x2="400" y2="170"/>
+  </g>
+  <g fill="#120f16">
+    <path d="M0 200 L0 170 L30 170 L30 150 L40 140 L50 150 L50 170 L90 170 L95 150 L110 150 L120 120 L130 150 L150 150 L150 170 L190 170 L200 155 L215 155 L215 140 L222 128 L229 140 L229 155 L245 155 L250 132 L262 110 L274 132 L280 155 L320 155 L330 165 L360 165 L365 145 L372 120 L379 145 L384 165 L420 165 L430 150 L445 150 L455 168 L520 168 L520 200 Z"/>
+  </g>
+</svg>`;
+
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function inline(s){ return esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>'); }
+function md(text){
+  let first = true;
+  return text.replace(/\r/g,'').split(/\n\s*\n/).map(b => b.trim()).filter(Boolean).map(b => {
+    if (/^(\*\s*){3,}$/.test(b)) return '<div class="scene">✦ ✦ ✦</div>';
+    const cls = first ? ' class="first"' : ''; first = false;
+    return `<p${cls}>${inline(b).replace(/\n/g,'<br>')}</p>`;
+  }).join('\n');
+}
+
+async function load(){
+  if (novel) return novel;
+  const r = await fetch('novels/catalog.json', {cache:'no-cache'});
+  novel = (await r.json()).novels[0];
+  return novel;
+}
+
+function home(n){
+  document.title = `${n.title} — ${n.author}`;
+  const last = parseInt(store.get('ostrovy-last') || '0', 10);
+  const start = last >= 1 && last <= n.chapters.length ? last : 1;
+  app.innerHTML = `
+  <section class="hero">${skyline}
+    <div class="kicker">${esc(n.series)}</div>
+    <h1>${esc(n.title)}</h1>
+    <div class="meta">${esc(n.author)} · úroveň ${esc(n.level)}</div>
+  </section>
+  <div class="wrap">
+    <div class="card">
+      <div class="tags">${n.genre.split('·').map(g=>`<span class="tag">${esc(g.trim())}</span>`).join('')}</div>
+      <div class="desc">${n.description.split('\n').map(l=>`<p>${esc(l)}</p>`).join('')}</div>
+      <a class="cta" href="#/kapitola/${start}">${last>1 ? 'Pokračovat v kapitole '+start : 'Začít číst'}</a>
+    </div>
+    <h2 class="sec">Kapitoly</h2>
+    <ol class="chapters">${n.chapters.map((c,i)=>`<li><a href="#/kapitola/${i+1}"><span class="n">${i+1}</span><span>${esc(c.title)}</span></a></li>`).join('')}</ol>
+  </div>`;
+  window.scrollTo(0,0);
+}
+
+async function chapter(n, i){
+  const c = n.chapters[i-1];
+  if (!c) { app.innerHTML = '<p class="err">Kapitola nenalezena.</p>'; return; }
+  const r = await fetch(`novels/${n.slug}/${c.file}`, {cache:'no-cache'});
+  const text = await r.text();
+  store.set('ostrovy-last', String(i));
+  document.title = `${i}. ${c.title} — ${n.title}`;
+  const prev = n.chapters[i-2], next = n.chapters[i];
+  app.innerHTML = `
+  <article>
+    <div class="chap-n">Kapitola ${i}</div>
+    <h1>${esc(c.title)}</h1>
+    ${md(text)}
+    ${next ? '' : '<p class="end">Pokračování příště…</p>'}
+  </article>
+  <nav class="pager">
+    ${prev ? `<a href="#/kapitola/${i-1}"><small>← Předchozí</small>${esc(prev.title)}</a>` : '<a href="#/"><small>←</small>Obsah</a>'}
+    ${next ? `<a class="next" href="#/kapitola/${i+1}"><small>Další →</small>${esc(next.title)}</a>` : '<a class="next" href="#/"><small>→</small>Obsah</a>'}
+  </nav>`;
+  window.scrollTo(0,0);
+}
+
+async function route(){
+  try {
+    const n = await load();
+    const m = location.hash.match(/^#\/kapitola\/(\d+)/);
+    if (m) await chapter(n, parseInt(m[1],10)); else home(n);
+  } catch(e) {
+    app.innerHTML = '<p class="err">Nepodařilo se načíst text. Zkuste stránku obnovit.</p>';
+  }
+}
+
+// font size + theme
+let fs = parseFloat(store.get('ostrovy-fs') || '1.14');
+const applyFs = () => document.documentElement.style.setProperty('--fs', fs + 'rem');
+applyFs();
+document.getElementById('bigger').onclick = () => { fs = Math.min(1.6, fs + .08); applyFs(); store.set('ostrovy-fs', fs); };
+document.getElementById('smaller').onclick = () => { fs = Math.max(.9, fs - .08); applyFs(); store.set('ostrovy-fs', fs); };
+const savedTheme = store.get('ostrovy-theme');
+if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+document.getElementById('theme').onclick = () => {
+  const dark = document.documentElement.dataset.theme
+    ? document.documentElement.dataset.theme === 'dark'
+    : matchMedia('(prefers-color-scheme: dark)').matches;
+  const t = dark ? 'light' : 'dark';
+  document.documentElement.dataset.theme = t; store.set('ostrovy-theme', t);
+};
+
+addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>

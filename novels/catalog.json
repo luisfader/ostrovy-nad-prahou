@@ -1,0 +1,20 @@
+{
+  "novels": [
+    {
+      "slug": "ostrovy-nad-prahou",
+      "lang": "cs",
+      "level": "A2–B1",
+      "title": "Ostrovy nad Prahou",
+      "series": "Pokračování příběhu „Do podzemí!“",
+      "genre": "Městská fantasy · Romantika · Slovanské legendy",
+      "author": "Robert Fader",
+      "description": "Lucie a Mark odjíždějí na dovolenou do Číny a Luis s Janou zůstávají v Praze sami.\nPo romantické noci u Vltavy přijde ráno, které nikdo nečekal: nad městem visí pět kamenných ostrovů s černými hrady.\nObrovské řetězy je drží v pěti srdcích Prahy a pijí sílu města.\nLuis hledá odpověď ve své Faderpedii a najde starou legendu o Temném pánovi.\nPraha má jen tři dny.",
+      "chapters": [
+        { "file": "01.md", "title": "Letadlo do Pekingu" },
+        { "file": "02.md", "title": "Noc u Vltavy" },
+        { "file": "03.md", "title": "Ostrovy na nebi" },
+        { "file": "04.md", "title": "Faderpedie" }
+      ]
+    }
+  ]
+}
